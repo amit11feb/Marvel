@@ -13,6 +13,10 @@ export class RegisterComponent implements OnInit {
   registerForm:FormGroup = new FormGroup({
     email:new FormControl(null,[Validators.email,Validators.required]),
     username:new FormControl(null,Validators.required),
+    fathername:new FormControl(null,Validators.required),
+    pannumber:new FormControl(null,Validators.required),
+    aadharnumber:new FormControl(null,Validators.required),
+    dob:new FormControl(null,Validators.required),
     password:new FormControl(null,Validators.required),
     cpass:new FormControl(null,Validators.required)
   })

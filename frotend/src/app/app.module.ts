@@ -10,13 +10,19 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {UserService} from './user.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { HomeComponent } from './home/home.component';
+import { QuoteFormComponent } from './quote-form/quote-form.component';
+import { FaqComponent } from './faq/faq.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    UserhomeComponent
+    UserhomeComponent,
+    HomeComponent,
+    QuoteFormComponent,
+    FaqComponent
+     
   ],
   imports: [
     BrowserModule,

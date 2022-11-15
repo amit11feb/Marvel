@@ -17,6 +17,10 @@ async function addToDB(req, res) {
   var user = new User({
     email: req.body.email,
     username: req.body.username,
+    fathername:req.body.fathername,
+    pannumber:req.body.pannumber,
+    aadharnumber:req.body.aadharnumber,
+    dob:req.body.dob,
     password: User.hashPassword(req.body.password),
     creation_dt: Date.now()
   });

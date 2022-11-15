@@ -1,0 +1,41 @@
+<form type="submit" #quoteForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      required
+      placeholder="Name"
+    />
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control" placeholder="Email" id="email" />
+  </div>
+  <div class="form-group">
+    <input
+      type="tel"
+      class="form-control"
+      placeholder="Mobile Number"
+      id="mobile"
+    />
+  </div>
+  <div class="form-group ">
+    <label class="tenure" for="tenure-option">Tenure</label> 
+    <div class="radio-toolbar">
+      <input type="radio" id="option1" name="radioCT" value="1 year">
+      <label for="option1">1 year</label>
+      <input type="radio" id="option2" name="radioCT" value="2-5 years">
+      <label for="option2">2-5 years</label>
+      <input type="radio" id="option3" name="radioCT" value=">5 years">
+      <label for="option3">>5 years</label>
+    </div>
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="Check1" checked/>
+    <small class="form-text text-muted" for="Check1">
+      I hereby authorize MARVEL General Insurance to contact me. I agree that
+      this consent will override my NDNC registration.</small
+    >
+  </div>
+  <button type="reset" class="btn btn-success">GET QUOTE NOW!</button>
+</form>

@@ -5,6 +5,10 @@ var bcrypt = require('bcrypt');
 var schema = new Schema({
     email : {type:String, require:true},
     username: {type:String, require:true},
+    fathername:{type:String, require:true},
+    pannumber:{type:Number, require:true},
+    aadharnumber:{type:Number, require:true},
+    dob:{type:Date, require:true},
     password:{type:String, require:true},
     creation_dt:{type:Date, require:true}
 });
