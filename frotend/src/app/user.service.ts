@@ -37,4 +37,12 @@ export class UserService {
     })
   }
 
+
+  addProperty(body:any){
+    return this._http.post('http://127.0.0.1:3000/property/addProperty',body,{
+      observe:'body',
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
+
 }

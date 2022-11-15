@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { FaqComponent } from './faq/faq.component';
+import { PropertyComponent } from './property/property.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { FaqComponent } from './faq/faq.component';
     UserhomeComponent,
     HomeComponent,
     QuoteFormComponent,
-    FaqComponent
+    FaqComponent,
+    PropertyComponent
      
   ],
   imports: [
