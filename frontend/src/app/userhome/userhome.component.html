@@ -1,0 +1,48 @@
+<div >
+  <ul class="navbar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link badge badge-secondary box " [routerLink]="['/newProperty']" routerLinkActive="active">New Property</a>
+    </li>
+
+  </ul>
+</div>{{username}}
+ <div ng-if="propertylist.length > 0">
+ <table class="table">
+<thead>
+  <th>PropertyName</th>
+  <th>Year of Construction</th>
+  <th>Property Type</th>
+  <th>Property Address</th>
+  <th>City</th>
+  <th>State</th>
+  <th>Area</th>
+  <th>HIRA/RERA Approved</th>
+  <th>HIRA/RERA Registration Number</th>
+  <th>Valuation</th>
+  <th>Policy Period</th>
+  <th>Policy Amount</th>
+  <th>Image</th>
+
+</thead>
+<tbody *ngFor="let pl of propertylist">
+  <td>{{pl.propertyname}}</td>
+  <td>{{pl.propertydated}}</td>
+  <td>{{pl.propertyTypeOption}}</td>
+  <td>{{pl.propertyaddress}}</td>
+  <td>{{pl.city}}</td>
+  <td>{{pl.state}}</td>
+  <td>{{pl.area}}</td>
+  <td>{{pl.approveOption}}</td>
+  <td>{{pl.approveNo}}</td>
+  <td>{{pl.valuation}}</td>
+  <td>{{pl.policyPeriod}}</td>
+  <td>{{pl.policyAmount}}</td>
+  <td> <img *ngIf="pl.image" src={{pl.image}} alt="propertimage" /></td>
+</tbody>
+
+</table>
+
+
+
+ </div>

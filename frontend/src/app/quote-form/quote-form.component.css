@@ -1,0 +1,59 @@
+form{
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.form-text {
+    font-size: 10px;
+    margin: 0 0 10px;
+}
+
+.form-check-input{
+ position:relative;
+}
+
+.tenure{
+    color:black;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.radio-toolbar{
+    display: flex;
+    text-align: center;
+}
+
+.radio-toolbar input[type="radio"]{
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color: #fff;
+    padding: 3px 8px;
+    font-size: 13px!important;
+    border-radius: 30px;
+    box-shadow: 0 2px 6px #00000029;
+    -webkit-box-shadow: 0 2px 6px #00000029;
+    margin: 2px;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+input[type=radio]:hover+label,
+input[type=radio]:checked+label {
+        background-color: rgb(112, 5, 5);
+        color:white;
+    }
+    
+button{
+    position: relative;
+}    

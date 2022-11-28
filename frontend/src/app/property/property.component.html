@@ -1,0 +1,113 @@
+<div class="container" style="max-width:450px;">
+  <div class="col-sm-12">
+    <form [formGroup]="newPropertyForm">
+      <div class="form-group">
+        <label for="exampleInputPropertyName">PropertyName</label>
+        <input formControlName="propertyname" type="text" class="form-control" id="exampleInputPropertyName"
+          aria-describedby="propertynameHelp" placeholder="Enter PropertyName" />
+        <small id="propertynameHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPropertyDated">Year of Construction</label>
+        <input formControlName="propertydated" type="text" class="form-control" id="exampleInputPropertyDated"
+          aria-describedby="propertydatedHelp" placeholder="Enter year of construction" />
+        <small id="propertydatedHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="exampleType">
+          Property Type:
+        </label>
+
+        <input type="radio" id="option1" value="Apartment" name="propertyTypeOption"
+          formControlName="propertyTypeOption" />
+        <label for="option1">Apartment</label>
+        <input type="radio" id="option2" value="Independant Building" name="propertyTypeOption"
+          formControlName="propertyTypeOption" />
+        <label for="option2">Independant Building</label>
+
+
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPropertyAddress">PropertyAddress</label>
+        <input formControlName="propertyaddress" type="text" class="form-control" id="exampleInputPropertyAddress"
+          aria-describedby="propertyaddressHelp" placeholder="Enter Address" />
+        <small id="propertyaddressHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputCity">City</label>
+        <input formControlName="city" type="text" class="form-control" id="exampleInputCity" aria-describedby="cityHelp"
+          placeholder="Enter City" />
+        <small id="cityHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputState">State</label>
+        <input formControlName="state" type="text" class="form-control" id="exampleInputState"
+          aria-describedby="stateHelp" placeholder="Enter State" />
+        <small id="stateHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputarea">Area</label>
+        <input formControlName="area" type="text" class="form-control" id="exampleInputarea" aria-describedby="areaHelp"
+          placeholder="Enter Area" />
+        <small id="areaHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="exampleLandmark">Landmark</label>
+        <input formControlName="landmark" type="text" class="form-control" id="exampleLandmark"
+          aria-describedby="landmarkHelp" placeholder="Enter Landmark" />
+        <small id="landmarkHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="exampleApprove">HIRA/RERA Approved:</label>
+
+        <input type="radio" id="option1" value="Yes" name="approveOption" formControlName="approveOption" />
+        <label for="option1">Yes</label>
+        <input type="radio" id="option2" value="No" name="approveOption" formControlName="approveOption" />
+        <label for="option2">No</label>
+
+
+      </div>
+
+      <div class="form-group">
+        <label for="exampleApproveNo">HIRA/RERA Registration Number</label>
+        <input formControlName="approveNo" type="text" class="form-control" id="exampleApproveNo"
+          aria-describedby="approveNoHelp" placeholder="Enter registration number" />
+        <small id="approveNoHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="exampleValuation">Valuation</label>
+        <input formControlName="valuation" type="Number" class="form-control" id="exampleValuation"
+          aria-describedby="valuationHelp" placeholder="Enter Current market value of your property" />
+        <small id="valuationHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="examplePolicyPeriod">Policy Period</label>
+        <input formControlName="policyPeriod" type="Number" class="form-control" id="examplePolicyPeriod"
+          aria-describedby="policyPeriodHelp" placeholder="Enter policy period" />
+        <small id="policyPeriodHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="examplePolicyAmount">Policy Amount</label>
+        <input formControlName="policyAmount" type="Number" class="form-control" id="examplePolicyAmount"
+          aria-describedby="policyAmountHelp" placeholder="Enter amount" />
+        <small id="policyAmountdHelp" class="form-text text-muted"></small>
+      </div>
+    
+      <div class="form-group">
+        <label for="file">PropertyImages</label>
+        <input formControlName="file" type="file" class="form-control" id="file"
+          aria-describedby="file" (change)="onFileChange($event)"  />
+        <small id="file" class="form-text text-muted"></small>
+      </div>
+      
+
+      <div class="form-group" style="text-align: center">
+        <button type="button" class="btn btn-dark" (click)="addProperty($event)">
+          Add Property
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>

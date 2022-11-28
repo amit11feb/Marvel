@@ -1,0 +1,288 @@
+
+body {
+  font-family: "Montserrat";
+}
+
+h1 {
+  font-family: "Montserrat-Bold";
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+/* Headings */
+
+.big-heading {
+  font-family: "Montserrat-Black";
+  font-size: 6vw;
+  position: absolute;
+  left: -9vw;
+  z-index: 99;
+  text-align: left;
+}
+
+.section-heading {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.heading-h4 {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.sub-title{
+  margin:1rem 0;
+}
+
+.list-style {
+  padding-left: 6rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 769px)
+{
+  .heading-lob-h1:before {
+    content: "\2014 \00a0 \00a0";
+    color: #e21f26;
+    font-weight: 700;
+   }
+}
+
+@media (min-width: 769px)
+ {
+  .heading-lob-h1:after {
+    content: "\00a0 \00a0 \2014 ";
+    color: #e21f26;
+    font-weight: 700;
+     }
+ }
+
+/* Containers */
+
+.container-fluid{
+  padding: 7% 15%;
+}
+
+.scenario {
+  margin: 2.5rem;
+}
+
+.benefit{
+  padding:1.5rem;
+  max-width: 880px;
+}
+
+/* Sections */
+
+.colored-section {
+  background-color: rgb(112, 5, 5);
+  color: #fff;
+}
+
+.white-section {
+  background-color: #fff;
+}
+
+.description p {
+  line-height: 1.88;
+  padding: 1.5rem;
+}
+
+.scenario-desc {
+  padding: 15px;
+}
+
+.Addon {
+  padding: 1.5rem;
+}
+
+/* Quote form */
+
+.quote-form{
+  right: -20vw;
+  background: #e5f6f7 0 0 no-repeat padding-box;
+  padding: 20px 20px;
+  border-radius: 8px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .quote-form{
+      right: -8vw;
+      top:5vw;
+  }
+
+  
+  h1{
+    padding-top: 3rem;
+   }
+}
+
+/*stack style*/
+
+
+/* AddOn */
+.inner-box{
+  background: #fff 0 0 no-repeat padding-box;
+  box-shadow: 0 2px 6px #0000001f;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  opacity: 1;
+  padding: 15px;
+}
+
+ 
+
+
+/* Buttons */
+
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+/* Title Section */
+
+#title {
+  background-color: white;
+  color: rgb(112, 5, 5);
+  text-align: left;
+}
+
+#title .container-fluid {
+  padding: 0 15%;
+}
+
+/* Title Image */
+
+.title-image {
+  width: 80%;
+  margin-left: 25vw;
+}
+
+.title-image1 {
+  width: 30rem;
+  position: relative;
+  right: 3rem;
+}
+
+/*Styling icons*/
+.icon-size {
+  width: 3vw;
+  float: left;
+}
+
+.icon-size2{
+  width:7%;
+  float:left;
+  margin: 0 0.5rem;
+}
+
+.icon-size3{
+  width:22%;
+  margin: 0.5vw 3vw;
+}
+
+.icon-desc {
+   padding-left: 2.5rem;
+}
+
+.icon-desc2{
+  float:left;
+  padding-left: 1rem;
+}
+
+.icon-desc3{
+  padding: 1rem 0;
+  margin-bottom:0;
+}
+
+.row-margin {
+  padding: 0 10vw;
+}
+/* Features Section */
+
+#features {
+  position: relative;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+}
+
+.feature-box {
+  padding: 4.5%;
+}
+
+.icon {
+  color: #ef8172;
+  margin-bottom: 1rem;
+}
+
+.icon:hover {
+  color: #ff4c68;
+}
+
+/* Testimonial Section */
+
+#testimonials {
+  background-color: #ef8172;
+}
+
+.testimonial-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.testimonial-image {
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+
+#press {
+  background-color: #ef8172;
+  padding-bottom: 3%;
+}
+
+.press-logo {
+  width: 15%;
+  margin: 20px 20px 50px;
+}
+
+/* Pricing Section */
+
+#pricing {
+  padding: 100px;
+}
+
+.price-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.pricing-column {
+  padding: 3% 2%;
+}
+
+/* CTA Section */
+
+
+/* Footer Section */
+
+
+.social-icon {
+  margin: 20px 10px;
+}
+
+@media (max-width: 1028px) {
+
+  #title {
+    text-align: center;
+  }
+
+  .title-image {
+    position: static;
+    transform: rotate(0);
+  }
+}

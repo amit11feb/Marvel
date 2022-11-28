@@ -1,0 +1,80 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<section class="brand-nav">
+  <div class="container">
+    <!-- Nav Bar -->
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="">Marvel</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo02"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+              <a class="nav-link" [routerLink] = "['/products']">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink] = "['/contactUs']">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink] = "['/aboutUs']">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink] = "['/faq']">FAQs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Login</a>
+            </li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+  </section>
+
+
+
+<div class="container">
+          <router-outlet></router-outlet>
+</div>
+
+       <!-- Footer -->
+       <section class="footer">
+        <div class="row">
+          <div class="container">
+            <div class="col-md-12">
+              <p>
+                T&C Apply. *Sum insured of Rs.11,10,000 for with upto15% of
+                discount ( as per security features opted). ^Discount & premium
+                may vary as per coverages opted. **Optional Cover for alternate
+                accommodation expenses like rent, hotel stay, shifting, brokerage,
+                emergency purchase, key and lock replacement covered. °Content sum
+                insured may vary as per structure value. #1.5 Crore+ Active
+                Customers upto Sept – 2020. HDFC ERGO General Insurance Company
+                Limited. Registered & Corporate Office: 1st Floor, HDFC House,
+                165-166 Backbay Reclamation, H. T. Parekh Marg, Churchgate, Mumbai
+                – 400 020. For more details on the risk factors, terms and
+                conditions, please read the sales brochure/ prospectus before
+                concluding the sale. Trade Logo displayed above belongs to HDFC
+                Ltd and ERGO International AG and used by the Company under
+                license. CIN: U66030MH2007PLC177117. UIN: Home Shield Insurance -
+                IRDAN125P0001V01201718. IRDAI Reg. No.146. UID No: D2-85 Image
+                Source :
+                https://timesofindia.indiatimes.com/city/goa/cyclone-tauktae-wreaks-havoc-in-goa-two-dead-over-200-houses-damaged/articleshow/82694311.cms
+                | https://www.freepress journal.in/mumbai/
+                cyclone-tauktae-in-raigad-three-dead-two-injured-over-1784-houses-damaged
+                |
+                https://indianexpress.com/article/india/cyclone-tauktae-batters-saurashtra-guj
+                rat-deaths- damages-7319803/
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
