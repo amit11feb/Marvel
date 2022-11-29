@@ -8,13 +8,10 @@ form{
     margin: 0 0 10px;
 }
 
-<<<<<<< HEAD
 .form-check-input{
  position:relative;
 }
 
-=======
->>>>>>> 280bb8ca09b28068928a3c9c8c23eaacfa05be69
 .tenure{
     color:black;
     font-weight: bold;
@@ -55,12 +52,8 @@ input[type=radio]:hover+label,
 input[type=radio]:checked+label {
         background-color: rgb(112, 5, 5);
         color:white;
-<<<<<<< HEAD
     }
     
 button{
     position: relative;
 }    
-=======
-    }
->>>>>>> 280bb8ca09b28068928a3c9c8c23eaacfa05be69

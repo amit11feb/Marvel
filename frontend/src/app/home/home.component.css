@@ -13,15 +13,9 @@ h1 {
 
 .big-heading {
   font-family: "Montserrat-Black";
-<<<<<<< HEAD
   font-size: 6vw;
   position: absolute;
   left: -9vw;
-=======
-  font-size: 3.5rem;
-  position: absolute;
-  left: -120px;
->>>>>>> 280bb8ca09b28068928a3c9c8c23eaacfa05be69
   z-index: 99;
   text-align: left;
 }
@@ -75,10 +69,7 @@ h1 {
 
 .benefit{
   padding:1.5rem;
-<<<<<<< HEAD
   max-width: 880px;
-=======
->>>>>>> 280bb8ca09b28068928a3c9c8c23eaacfa05be69
 }
 
 /* Sections */
@@ -108,17 +99,12 @@ h1 {
 /* Quote form */
 
 .quote-form{
-<<<<<<< HEAD
   right: -20vw;
-=======
-  left: 10rem;
->>>>>>> 280bb8ca09b28068928a3c9c8c23eaacfa05be69
   background: #e5f6f7 0 0 no-repeat padding-box;
   padding: 20px 20px;
   border-radius: 8px;
 }
 
-<<<<<<< HEAD
 
 @media only screen and (max-width: 768px) {
   .quote-form{
@@ -132,8 +118,6 @@ h1 {
    }
 }
 
-=======
->>>>>>> 280bb8ca09b28068928a3c9c8c23eaacfa05be69
 /*stack style*/
 
 
@@ -144,10 +128,6 @@ h1 {
   border: 1px solid #e2e2e2;
   border-radius: 8px;
   opacity: 1;
-<<<<<<< HEAD
-=======
-  margin: 10px;
->>>>>>> 280bb8ca09b28068928a3c9c8c23eaacfa05be69
   padding: 15px;
 }
 
@@ -176,30 +156,18 @@ h1 {
 
 .title-image {
   width: 80%;
-<<<<<<< HEAD
   margin-left: 25vw;
-=======
-  margin-left: 15rem;
->>>>>>> 280bb8ca09b28068928a3c9c8c23eaacfa05be69
 }
 
 .title-image1 {
   width: 30rem;
   position: relative;
   right: 3rem;
-<<<<<<< HEAD
-=======
-  top: 5rem;
->>>>>>> 280bb8ca09b28068928a3c9c8c23eaacfa05be69
 }
 
 /*Styling icons*/
 .icon-size {
-<<<<<<< HEAD
   width: 3vw;
-=======
-  width: 8%;
->>>>>>> 280bb8ca09b28068928a3c9c8c23eaacfa05be69
   float: left;
 }
 
@@ -211,20 +179,11 @@ h1 {
 
 .icon-size3{
   width:22%;
-<<<<<<< HEAD
   margin: 0.5vw 3vw;
 }
 
 .icon-desc {
    padding-left: 2.5rem;
-=======
-  margin: 0.5rem 3rem;
-}
-
-.icon-desc {
-   float: left;
-   padding-left: 1.5rem;
->>>>>>> 280bb8ca09b28068928a3c9c8c23eaacfa05be69
 }
 
 .icon-desc2{
@@ -238,11 +197,7 @@ h1 {
 }
 
 .row-margin {
-<<<<<<< HEAD
   padding: 0 10vw;
-=======
-  padding: 0 10%;
->>>>>>> 280bb8ca09b28068928a3c9c8c23eaacfa05be69
 }
 /* Features Section */
 
