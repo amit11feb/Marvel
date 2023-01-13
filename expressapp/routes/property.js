@@ -15,45 +15,54 @@ var Storage = multer.diskStorage({
     cb(null, file.fieldname + "_" + Date.now() + path.extname(file.originalname));
   }
 });
-
+ 
 var upload = multer({
   storage: Storage
 }).single('file');
 
 
-router.post('/addProperty', upload, function (req, res, next) {
-  // var success =req.file.filename+ " uploaded successfully";
-  if (!req.file) {
-    console.log("error");
-    return res.status(500).send({ message: 'Upload fail' });
-  } else {
-
+router.post('/addProperty',  function (req, res, next) {
+   
+   
  
-    addToDB(JSON.parse(req.body.data), req,res);
-  }
+  addToDB(req, res);
+  
 
 });
 
+ 
+router.delete('/deleteProperty/:id', function (req, res, next) {
+  deletePropertyList(req, res)
+});
+router.put('/editProperty/:id', function (req, res, next) {
+  editPropertyList(req, res)
+});
+router.get('/getProperty', function (req, res, next) {
+  getproperties(req, res);
+});
+router.get('/getProperty/:id', function (req, res, next) {
+  getpropertiesbyId(req, res)
+});
 
-async function addToDB(req,reqfile ,res) {
+
+async function addToDB(req,res) {
   // console.log("Addtodb");
   // console.log(reqfile);
-  console.log(reqfile.file.filename);
-  var property = new Property({
-    propertyname: req.propertyname,
-    propertydated: req.propertydated,
-    propertyTypeOption: req.propertyTypeOption,
-    propertyaddress: req.propertyaddress,
-    city: req.city,
-    state: req.state,
-    area: req.area,
-    landmark: req.landmark,
-    approveOption: req.approveOption,
-    approveNo: req.approveNo,
-    valuation: req.valuation,
-    policyPeriod: req.policyPeriod,
-    policyAmount: req.policyAmount,
-    image: reqfile.file.filename,
+   var property = new Property({
+    propertyname: req.body.propertyname,
+    propertydesc: req.body.propertydesc,
+    propertyaddress: req.body.propertyaddress,
+    landmark: req.body.landmark,
+    state: req.body.state,
+    city: req.body.city,
+    reraApproved: req.body.reraApproved,
+    registrationNumber: req.body.registrationNumber,
+    valuation: req.body.valuation,
+    propertyAge: req.body.propertyAge,
+    policyDuration: req.body.policyDuration,
+    policyAmount: req.body.policyAmount,
+    policyCoverage: req.body.policyCoverage,
+    images:"file",
     creation_dt: Date.now()
 
   });
@@ -66,9 +75,20 @@ async function addToDB(req,reqfile ,res) {
     return res.status(501).json(err);
   }
 }
-router.get('/getProperty', function (req, res, next) {
-  getproperties(req, res);
-});
+
+async function getpropertiesbyId(req, res) {
+  const id = req.params.id;
+  console.log(id);
+
+  try {
+    doc = await Property.findById(id);
+    return res.status(201).json(doc)
+  }
+  catch (err) {
+    console.log(err);
+    return res.status(501).json(err);
+  }
+}
 async function getproperties(req, res) {
 
   try {
@@ -80,6 +100,32 @@ async function getproperties(req, res) {
     return res.status(501).json(err);
   }
 }
+async function deletePropertyList(req, res) {
+  const id = req.params.id;
+  try {
+    doc = await Property.findByIdAndRemove(id);
+    return res.status(201).json(doc)
+  }
+  catch (err) {
+    console.log(err);
+    return res.status(501).json(err);
+  }
+}
+async function editPropertyList(req, res) {
+  const id = req.params.id;
+  console.log(req.body)
+  try {
+    doc = await Property.findByIdAndUpdate(id, req.body);
+    return res.status(201).json(doc)
+  }
+  catch (err) {
+    console.log(err);
+    return res.status(501).json(err);
+  }
+}
+
+
+
 
 
 module.exports = router;

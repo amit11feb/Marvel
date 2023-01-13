@@ -15,12 +15,13 @@ router.post('/register', function (req, res, next) {
 async function addToDB(req, res) {
 
   var user = new User({
-    email: req.body.email,
-    username: req.body.username,
-    fathername:req.body.fathername,
-    pannumber:req.body.pannumber,
-    aadharnumber:req.body.aadharnumber,
+     fName:req.body.fName,
+     mName:req.body.mName,
+     lName:req.body.lName,
+    panNumber:req.body.panNumber,
+    aadharNumber:req.body.aadharNumber,
     dob:req.body.dob,
+    email: req.body.email,
     password: User.hashPassword(req.body.password),
     creation_dt: Date.now()
   });

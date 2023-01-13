@@ -1,113 +1,209 @@
-<div class="container" style="max-width:450px;">
-  <div class="col-sm-12">
-    <form [formGroup]="newPropertyForm">
-      <div class="form-group">
-        <label for="exampleInputPropertyName">PropertyName</label>
-        <input formControlName="propertyname" type="text" class="form-control" id="exampleInputPropertyName"
-          aria-describedby="propertynameHelp" placeholder="Enter PropertyName" />
-        <small id="propertynameHelp" class="form-text text-muted"></small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPropertyDated">Year of Construction</label>
-        <input formControlName="propertydated" type="text" class="form-control" id="exampleInputPropertyDated"
-          aria-describedby="propertydatedHelp" placeholder="Enter year of construction" />
-        <small id="propertydatedHelp" class="form-text text-muted"></small>
-      </div>
-      <div class="form-group">
-        <label for="exampleType">
-          Property Type:
-        </label>
+<form [formGroup]="newPropertyForm" (ngSubmit)="onSubmit($event)">
 
-        <input type="radio" id="option1" value="Apartment" name="propertyTypeOption"
-          formControlName="propertyTypeOption" />
-        <label for="option1">Apartment</label>
-        <input type="radio" id="option2" value="Independant Building" name="propertyTypeOption"
-          formControlName="propertyTypeOption" />
-        <label for="option2">Independant Building</label>
-
-
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="form-group">
+          <label>Property Name</label>
+          <input type="text" id="propertyname" formControlName="propertyname" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['propertyname'].errors }" placeholder="Enter Property Name" />
+          <div *ngIf="submitted && f['propertyname'].errors" class="invalid-feedback">
+            <div *ngIf="f['propertyname'].errors['required']">Property Name is required</div>
+          </div>
+        </div>
       </div>
-
-      <div class="form-group">
-        <label for="exampleInputPropertyAddress">PropertyAddress</label>
-        <input formControlName="propertyaddress" type="text" class="form-control" id="exampleInputPropertyAddress"
-          aria-describedby="propertyaddressHelp" placeholder="Enter Address" />
-        <small id="propertyaddressHelp" class="form-text text-muted"></small>
+      <div class="col-sm">
+        <div class="form-group">
+          <label>Property Description</label>
+          <input type="text" id="propertydesc" formControlName="propertydesc" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['propertydesc'].errors }"
+            placeholder="Enter Property Description" />
+          <div *ngIf="submitted && f['propertydesc'].errors" class="invalid-feedback">
+            <div *ngIf="f['propertydesc'].errors['required']">Property Description is required</div>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="exampleInputCity">City</label>
-        <input formControlName="city" type="text" class="form-control" id="exampleInputCity" aria-describedby="cityHelp"
-          placeholder="Enter City" />
-        <small id="cityHelp" class="form-text text-muted"></small>
+      <div class="col-sm">
+        <div class="form-group">
+          <label>Property Address</label>
+          <input type="text" id="propertyaddress" formControlName="propertyaddress" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['propertyaddress'].errors }"
+            placeholder="Enter Property Address" />
+          <div *ngIf="submitted && f['propertyaddress'].errors" class="invalid-feedback">
+            <div *ngIf="f['propertyaddress'].errors['required']">Property Address is required</div>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="exampleInputState">State</label>
-        <input formControlName="state" type="text" class="form-control" id="exampleInputState"
-          aria-describedby="stateHelp" placeholder="Enter State" />
-        <small id="stateHelp" class="form-text text-muted"></small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputarea">Area</label>
-        <input formControlName="area" type="text" class="form-control" id="exampleInputarea" aria-describedby="areaHelp"
-          placeholder="Enter Area" />
-        <small id="areaHelp" class="form-text text-muted"></small>
-      </div>
-      <div class="form-group">
-        <label for="exampleLandmark">Landmark</label>
-        <input formControlName="landmark" type="text" class="form-control" id="exampleLandmark"
-          aria-describedby="landmarkHelp" placeholder="Enter Landmark" />
-        <small id="landmarkHelp" class="form-text text-muted"></small>
-      </div>
-      <div class="form-group">
-        <label for="exampleApprove">HIRA/RERA Approved:</label>
-
-        <input type="radio" id="option1" value="Yes" name="approveOption" formControlName="approveOption" />
-        <label for="option1">Yes</label>
-        <input type="radio" id="option2" value="No" name="approveOption" formControlName="approveOption" />
-        <label for="option2">No</label>
-
-
-      </div>
-
-      <div class="form-group">
-        <label for="exampleApproveNo">HIRA/RERA Registration Number</label>
-        <input formControlName="approveNo" type="text" class="form-control" id="exampleApproveNo"
-          aria-describedby="approveNoHelp" placeholder="Enter registration number" />
-        <small id="approveNoHelp" class="form-text text-muted"></small>
-      </div>
-      <div class="form-group">
-        <label for="exampleValuation">Valuation</label>
-        <input formControlName="valuation" type="Number" class="form-control" id="exampleValuation"
-          aria-describedby="valuationHelp" placeholder="Enter Current market value of your property" />
-        <small id="valuationHelp" class="form-text text-muted"></small>
-      </div>
-      <div class="form-group">
-        <label for="examplePolicyPeriod">Policy Period</label>
-        <input formControlName="policyPeriod" type="Number" class="form-control" id="examplePolicyPeriod"
-          aria-describedby="policyPeriodHelp" placeholder="Enter policy period" />
-        <small id="policyPeriodHelp" class="form-text text-muted"></small>
-      </div>
-      <div class="form-group">
-        <label for="examplePolicyAmount">Policy Amount</label>
-        <input formControlName="policyAmount" type="Number" class="form-control" id="examplePolicyAmount"
-          aria-describedby="policyAmountHelp" placeholder="Enter amount" />
-        <small id="policyAmountdHelp" class="form-text text-muted"></small>
-      </div>
-    
-      <div class="form-group">
-        <label for="file">PropertyImages</label>
-        <input formControlName="file" type="file" class="form-control" id="file"
-          aria-describedby="file" (change)="onFileChange($event)"  />
-        <small id="file" class="form-text text-muted"></small>
-      </div>
-      
-
-      <div class="form-group" style="text-align: center">
-        <button type="button" class="btn btn-dark" (click)="addProperty($event)">
-          Add Property
-        </button>
-      </div>
-    </form>
+    </div>
   </div>
 
-</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="form-group">
+          <label>LandMark</label>
+          <input type="text" id="landmark" formControlName="landmark" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['landmark'].errors }" placeholder="Enter Land Mark" />
+          <div *ngIf="submitted && f['landmark'].errors" class="invalid-feedback">
+            <div *ngIf="f['landmark'].errors['required']">Land Mark is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-group">
+          <label>State</label>
+          <input type="text" id="state" formControlName="state" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['state'].errors }" placeholder="Enter State" />
+          <div *ngIf="submitted && f['state'].errors" class="invalid-feedback">
+            <div *ngIf="f['state'].errors['required']">State is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-group">
+          <label>City</label>
+          <input type="text" id="city" formControlName="city" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['city'].errors }" placeholder="Enter City" />
+          <div *ngIf="submitted && f['city'].errors" class="invalid-feedback">
+            <div *ngIf="f['city'].errors['required']">City is required</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <label>HIRA / RERA Approved</label>
+
+        <div class="form-check">
+
+          <input class="form-check-input" type="radio" name="reraApproved" id="reraApproved1"
+              checked value="Yes">
+          <label class="form-check-label" for="reraApproved1"> Yes </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="reraApproved" id="reraApproved2"
+          value="No"  >
+          <label class="form-check-label" for="reraApproved2">No </label>
+        </div>
+        <div *ngIf="submitted && f['reraApproved'].errors" class="invalid-feedback">
+          <div *ngIf="f['reraApproved'].errors['required']">Rera Approved is required</div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-group">
+          <label>HIRA/RERA Registration Number</label>
+          <input type="text" id="registrationNumber" formControlName="registrationNumber" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['registrationNumber'].errors }"
+            placeholder="Enter HIRA/RERA Registration Number" />
+          <div *ngIf="submitted && f['registrationNumber'].errors" class="invalid-feedback">
+            <div *ngIf="f['registrationNumber'].errors['required']">HIRA/RERA Registration Number is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-group">
+          <label>Valuation</label>
+          <input type="text" id="valuation" formControlName="valuation" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['valuation'].errors }" placeholder="Enter Valuation" />
+          <div *ngIf="submitted && f['valuation'].errors" class="invalid-feedback">
+            <div *ngIf="f['valuation'].errors['required']">Valuation is required</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="form-group">
+          <label>Property Age</label>
+          <input type="text" id="propertyAge" formControlName="propertyAge" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['propertyAge'].errors }" placeholder="Enter Property Age" />
+          <div *ngIf="submitted && f['propertyAge'].errors" class="invalid-feedback">
+            <div *ngIf="f['propertyAge'].errors['required']">Property Age is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+
+        <div class="form-group">
+          <label>Policy Duration</label>
+          <input type="text" id="policyDuration" formControlName="policyDuration" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['policyDuration'].errors }"
+            placeholder="Enter Policy Duration " />
+          <div *ngIf="submitted && f['policyDuration'].errors" class="invalid-feedback">
+            <div *ngIf="f['policyDuration'].errors['required']">Policy Duration is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-group">
+          <label>Policy Amount</label>
+          <input type="text" id="policyAmount" formControlName="policyAmount" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['policyAmount'].errors }" placeholder="Enter Policy Amount " />
+          <div *ngIf="submitted && f['policyAmount'].errors" class="invalid-feedback">
+            <div *ngIf="f['policyAmount'].errors['required']">Policy Amount is required</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="form-group">
+          <label>Policy Coverage</label>
+          <input type="text" id="policyCoverage" formControlName="policyCoverage" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['policyCoverage'].errors }"
+            placeholder="Enter Policy Coverage " />
+          <div *ngIf="submitted && f['policyCoverage'].errors" class="invalid-feedback">
+            <div *ngIf="f['policyCoverage'].errors['required']">Policy Coverage is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-group">
+          <label for="images">PropertyImages</label>
+ 
+          <input formControlName="file" type="file" class="form-control" 
+          id="file" aria-describedby="file" name="file"  aria-describedby="file"
+            (change)="onFileChange($event)" [ngClass]="{ 'is-invalid': submitted && f['file'].errors }" />
+
+          <div *ngIf="submitted && f['file'].errors" class="invalid-feedback">
+            <div *ngIf="f['file'].errors['required']">Property Images is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+         
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+
+
+
+
+
+      <div class="form-group" style="text-align:center;">
+        <button type="submit" class="btn btn-dark" (click)="onSubmit($event)"> Add Property
+        </button>
+
+        <button class="btn btn-secondary" type="reset" (click)="onReset()">Reset</button>
+      </div>
+
+
+    </div>
+
+  </div>
+</form>

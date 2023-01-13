@@ -1,60 +1,178 @@
-  <div class="container" style="max-width:450px;">
-    <div class="col-sm-12">
-      <form [formGroup]="registerForm">
-        
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted"></small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputUsername">User name</label>
-            <input formControlName="username" type="text" class="form-control" id="exampleInputUsername" aria-describedby="userHelp" placeholder="username">
-            <small id="userHelp" class="form-text text-muted"></small>
-        </div>
-  
-        
-      <div class="form-group">
-        <label for="exampleInputFathername">Father name</label>
-        <input formControlName="fathername" type="text" class="form-control" id="exampleInputFathername" aria-describedby="fatherHelp" placeholder="fathername">
-        <small id="fatherHelp" class="form-text text-muted"></small>
-    </div>
-    
-        <div class="form-group">
-          <label for="exampleInputPannumber">PAN Number</label>
-          <input formControlName="pannumber" type="number" class="form-control" id="exampleInputPannumber" aria-describedby="panHelp" placeholder="pannumber">
-          <small id="panHelp" class="form-text text-muted"></small>
-      </div>
-  
-      <div class="form-group">
-        <label for="exampleInputAadharnumber">Aadhar Number</label>
-        <input formControlName="aadharnumber" type="number" class="form-control" id="exampleInputAadharnumber" aria-describedby="aadharHelp" placeholder="aadharnumber">
-        <small id="aadharHelp" class="form-text text-muted"></small>
-    </div>
-  
-    <div class="form-group">
-      <label for="exampleInputDOB">DOB</label>
-      <input formControlName="dob" type="date" class="form-control" id="exampleInputDOB" aria-describedby="dobHelp" placeholder="dob">
-      <small id="dobHelp" class="form-text text-muted"></small>
+<div class="row" style="margin-top:40px; margin: auto;
+ position:relative; bottom:20px;
+padding:20px; background-color:#eff0f2;border-radius:15px;
+-webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+-moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);">
+  <div class="col-sm-12" style="text-align:center;">
+    Registration
   </div>
-  
-  
+<form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+
+
         <div class="form-group">
-          <label for="passwordInput">Password</label>
-          <input formControlName="password" type="password" class="form-control" id="passwordInput" aria-describedby="passHelp" placeholder="password">
-          <small id="passHelp" class="form-text text-muted"></small>
-        </div>
-        <div class="form-group">
-            <label for="CpasswordInput">Confirm Password</label>
-            <input formControlName="cpass" type="password" class="form-control" id="CpasswordInput" aria-describedby="CpassHelp" placeholder="password">
-            <small id="CpassHelp" class="form-text text-muted"></small>
+          <label>First Name</label>
+          <input type="text" id="fName" formControlName="fName" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['fName'].errors }" placeholder="Enter First Name" />
+          <div *ngIf="submitted && f['fName'].errors" class="invalid-feedback">
+            <div *ngIf="f['fName'].errors['required']">First Name is required</div>
           </div>
-        <div class="form-group" style="text-align:center;">
-            <button type="button" class="btn btn-dark" (click)="register()">Register</button>
-            <button type="button" class="btn btn-secondary" (click)="moveToLogin()">Log in</button>
         </div>
-      </form>
+
+      </div>
+      <div class="col-sm">
+
+
+        <div class="form-group">
+          <label>Middle/Father Name</label>
+          <input type="text" id="mName" formControlName="mName" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['mName'].errors}" placeholder="Enter Middle/Father Name" />
+          <div *ngIf="submitted && f['mName'].errors" class="invalid-feedback">
+            <div *ngIf="f['mName'].errors['required']">Middle/Father Name is required</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm">
+
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" id="lName" formControlName="lName" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['lName'].errors }" placeholder="Enter Last Name" />
+          <div *ngIf="submitted && f['lName'].errors" class="invalid-feedback">
+            <div *ngIf="f['lName'].errors['required']">Last Name is required</div>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
     </div>
-   
   </div>
-  
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+
+        <div class="form-group">
+          <label>PAN Number</label>
+          <input type="text" id="panNumber" formControlName="panNumber" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['panNumber'].errors }" placeholder="Enter PAN Number" />
+          <div *ngIf="submitted && f['panNumber'].errors" class="invalid-feedback">
+            <div *ngIf="f['panNumber'].errors['required']">PAN Number is required</div>
+            <div *ngIf="f['panNumber'].errors['minlength']">
+              PAN Number must be at least 10 characters
+            </div>
+            <div *ngIf="f['panNumber'].errors['maxlength']">
+              PAN Number must not exceed 10 characters
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="col-sm">
+
+        <div class="form-group">
+          <label>Aadhar Number</label>
+          <input type="number"  
+          onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'" 
+          id="aadharNumber" formControlName="aadharNumber" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['aadharNumber'].errors }" placeholder="Enter Aadhar Number" />
+          <div *ngIf="submitted && f['aadharNumber'].errors" class="invalid-feedback">
+            <div *ngIf="f['aadharNumber'].errors['required']">Aadhar Number is required</div>
+
+
+            <!-- <div *ngIf="f['aadharNumber'].errors['pattern']">Please, Enter 12 digit Aadhar Number.</div> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+
+        <div class="form-group">
+          <label>Date of Birth</label>
+          <input type="date" id="dob" formControlName="dob" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['dob'].errors }" placeholder="Enter DOB" />
+          <div *ngIf="submitted && f['dob'].errors" class="invalid-feedback">
+            <div *ngIf="f['dob'].errors['required']">DOB is required</div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <div class="form-group">
+              <label>Email address</label>
+              <input type="text" id="emailid" formControlName="email" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" placeholder="Enter Email address" />
+              <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                <div *ngIf="f['email'].errors['required']">Email is required</div>
+
+                <div *ngIf="f['email'].errors['email']">Email must be a valid email address</div>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="col-sm">
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" formControlName="password" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" placeholder="Enter Password" />
+              <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                <div *ngIf="f['password'].errors['required']">Password is required</div>
+                <div *ngIf="f['password'].errors['minlength']">
+                  Password must be at least 6 characters
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-sm">
+
+            <div class="form-group">
+              <label>Confirm Password</label>
+              <input type="password" formControlName="confirmPassword" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }"
+                placeholder="Enter Confirm Password" />
+              <div *ngIf="submitted && f['confirmPassword'].errors" class="invalid-feedback">
+                <div *ngIf="f['confirmPassword'].errors['required']">
+                  Confirm Password is required
+                </div>
+                <div *ngIf="f['confirmPassword'].errors['matching']">
+                  Confirm Password does not match
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="form-group" style="text-align:center;">
+    <button type="button" class="btn btn-dark" (click)="onSubmit()">Register</button>
+    <button type="button" class="btn btn-secondary" (click)="moveToLogin()">Log in</button>
+  </div>
+</form>
+</div>

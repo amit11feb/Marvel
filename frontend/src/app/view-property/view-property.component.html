@@ -1,0 +1,120 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div class="form-group">
+                <label>Property Name : {{propertylist?.propertyname}}</label>
+                
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <label>Property Description : {{propertylist?.propertydesc}}</label>
+                 
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <label>Property Address:  {{propertylist?.propertyaddress}}</label>
+              
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div class="form-group">
+                <label>LandMark : {{propertylist?.landmark}}</label>
+                
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <label>State : {{propertylist?.state}}</label>
+                 
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <label>City : {{propertylist?.city}}</label>
+                 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <label>HIRA / RERA Approved :  Yes</label>
+
+            
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <label>HIRA/RERA Registration Number : {{propertylist?.registrationNumber}}</label>
+                
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <label>Valuation :  {{propertylist?.valuation}}</label>
+              
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div class="form-group">
+                <label>Property Age :  {{propertylist?.propertyAge}}</label>
+               
+            </div>
+        </div>
+        <div class="col-sm">
+
+            <div class="form-group">
+                <label>Policy Duration : {{propertylist?.policyDuration}}</label>
+                
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <label>Policy Amount : {{propertylist?.policyAmount}}</label>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div class="form-group">
+                <label>Policy Coverage : {{propertylist?.policyCoverage}}</label>
+               
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <label for="file">PropertyImages</label>
+                <img *ngIf="propertylist.image" src='expressapp/public/uploads/{{propertylist.image}}' alt="propertimage" >
+            </div>
+        </div>
+       
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="form-group" style="text-align:center;">
+            <button class="btn btn-secondary" type="reset" (click)="onReset()">Back</button>
+        </div>
+    </div>
+</div>

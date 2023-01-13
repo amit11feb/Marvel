@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {FormGroup,FormControl,Validators} from '@angular/forms';
+import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { UserService } from '../user.service';
 @Component({
   selector: 'app-property',
@@ -8,32 +8,35 @@ import { UserService } from '../user.service';
   styleUrls: ['./property.component.css']
 })
 export class PropertyComponent implements OnInit {
+  newPropertyForm: FormGroup;
+  submitted = false;
 
-  newPropertyForm:FormGroup = new FormGroup({
-   
-    propertyname:new FormControl(null,Validators.required),
-    propertydated:new FormControl(null,Validators.required),
-    propertyTypeOption:new FormControl(null,Validators.required),
-    propertyaddress:new FormControl(null,Validators.required), 
-    city:new FormControl(null,Validators.required),
-    state:new FormControl(null,Validators.required),
-    area:new FormControl(null,Validators.required),
-    landmark:new FormControl(null,Validators.required),
-    approveOption:new FormControl(null,Validators.required),
-    approveNo:new FormControl(null,Validators.required),
-    valuation:new FormControl(null,Validators.required),
-    policyPeriod:new FormControl(null,Validators.required),
-    policyAmount:new FormControl(null,Validators.required) ,
-    file:new FormControl(null,Validators.required),
-    fileSource: new FormControl('', [Validators.required])
-
-  })
-  constructor(private _router:Router, private _userService:UserService) { }
+  constructor(private formBuilder: FormBuilder,private _router:Router, private _userService:UserService) { }
 
   ngOnInit(): void {
+    this.newPropertyForm = this.formBuilder.group({
+    
+      propertyname: ['', Validators.required],
+      propertydesc: ['', [Validators.required]],
+      propertyaddress: ['', [Validators.required]],
+      landmark:['',Validators.required],
+      state: ['', Validators.required],
+      city:['',Validators.required],
+      reraApproved:[''],
+      registrationNumber :['',Validators.required],
+      valuation :['',Validators.required],
+      propertyAge :['',Validators.required],
+      policyDuration :['',Validators.required],
+      policyAmount :['',Validators.required],
+      policyCoverage:['',Validators.required],
+      file:['',Validators.required]
+
+  });
+
   }
 
-     
+  get f() { return this.newPropertyForm.controls; }
+  
   onFileChange(event :any) {
   
     if (event.target.files.length > 0) {
@@ -43,15 +46,22 @@ export class PropertyComponent implements OnInit {
       });
      this.newPropertyForm.patchValue(file,file.value); 
     }
+    console.log(this.newPropertyForm,this.newPropertyForm.value.fileSource);
  
   }
-  addProperty(event :any){
-    if(!this.newPropertyForm.valid ){
+
+  onReset() {
+    this.submitted = false;
+    this.newPropertyForm.reset();
+}
+  onSubmit(event :any){
+    this.submitted = true;
+
+    if(this.newPropertyForm.invalid ){
       console.log('Invalid Form'); return;
     }
   
-   
-  //console.log(this.newPropertyForm.value.fileSource)
+    console.log(this.newPropertyForm,this.newPropertyForm.value.fileSource);
 
     this._userService.addProperty(JSON.stringify(this.newPropertyForm.value),this.newPropertyForm.value.fileSource)
     .subscribe(

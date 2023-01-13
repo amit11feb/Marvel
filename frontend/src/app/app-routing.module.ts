@@ -9,6 +9,7 @@ import { PropertyComponent } from './property/property.component';
 import { CoverageComponent } from './coverage/coverage.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { ViewPropertyComponent } from './view-property/view-property.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
    {path:'products', component:CoverageComponent},
@@ -18,7 +19,9 @@ const routes: Routes = [
   {path:'register', component:RegisterComponent},
   {path:'user',component:UserhomeComponent}, 
   {path:'faq',component: FaqComponent},
-  {path:'newProperty',component: PropertyComponent}
+  {path:'newProperty',component: PropertyComponent},
+  {path:'viewProperty/:id',component: ViewPropertyComponent}
+
 ];
 
 @NgModule({
